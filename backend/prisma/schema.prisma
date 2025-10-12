@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  notifications Notification[]
+  recordings Recording[]
+}
+
+model Recording {
+  id          String   @id @default(cuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  createdAt   DateTime @default(now())
+  durationSec Int
+  thumbUrl    String?
+  sizeMB      Float
+  storagePath String
+  mime        String
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  type      String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model DeviceState {
+  id            String   @id @default("doorbell")
+  led           Boolean  @default(false)
+  servo         Int      @default(90)
+  lastRingAt    DateTime?
+  lastMotionAt  DateTime?
+  updatedAt     DateTime @updatedAt
+}
