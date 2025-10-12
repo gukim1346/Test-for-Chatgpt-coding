@@ -17,18 +17,23 @@ router.get('/', async (req: AuthenticatedRequest, res) => {
   const skip = (pageNumber - 1) * take;
 
   const filters: Prisma.RecordingWhereInput = { userId: req.userId };
+  const createdAtFilter: Prisma.DateTimeFilter = {};
 
   if (from && typeof from === 'string') {
     const parsed = parseISO(from);
     if (isValid(parsed)) {
-      filters.createdAt = { ...(filters.createdAt ?? {}), gte: parsed };
+      createdAtFilter.gte = parsed;
     }
   }
   if (to && typeof to === 'string') {
     const parsed = parseISO(to);
     if (isValid(parsed)) {
-      filters.createdAt = { ...(filters.createdAt ?? {}), lte: parsed };
+      createdAtFilter.lte = parsed;
     }
+  }
+
+  if (Object.keys(createdAtFilter).length > 0) {
+    filters.createdAt = createdAtFilter;
   }
   if (q && typeof q === 'string' && q.trim()) {
     filters.OR = [
