@@ -5,6 +5,7 @@
 .gcloudignore
 .git
 .gitignore
+!Dockerfile
 __pycache__/
 *.pyc
 *.pyo
