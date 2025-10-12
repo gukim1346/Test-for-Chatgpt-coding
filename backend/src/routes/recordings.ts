@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { parseISO, isValid } from 'date-fns';
-import { Prisma } from '@prisma/client';
+import type { Prisma, Recording } from '@prisma/client';
 import prisma from '../config/prisma.js';
 import { authenticate, AuthenticatedRequest } from '../middleware/auth.js';
 import { getSignedUrl } from '../services/storage.js';
@@ -50,7 +50,7 @@ router.get('/', async (req: AuthenticatedRequest, res) => {
   const nextPageToken = skip + items.length < total ? String(pageNumber + 1) : null;
 
   res.json({
-    items: items.map((item) => ({
+    items: items.map((item: Recording) => ({
       id: item.id,
       createdAt: item.createdAt,
       durationSec: item.durationSec,
