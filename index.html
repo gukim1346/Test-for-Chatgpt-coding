@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaLaunch &middot; Launch Better Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container">
+        <a class="logo" href="#top">NovaLaunch</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav class="primary-navigation" id="primary-navigation" data-open="false">
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#showcase">Showcase</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact" class="btn btn--ghost">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <p class="eyebrow">Product Launch Platform</p>
+            <h1>Launch better products with data-backed decisions.</h1>
+            <p class="lead">
+              NovaLaunch gives product teams a central hub for research, planning,
+              and go-to-market execution. Collaborate, track metrics, and launch
+              with confidence.
+            </p>
+            <div class="hero__actions">
+              <a class="btn" href="#pricing">Start for free</a>
+              <a class="btn btn--ghost" href="#showcase">See how it works</a>
+            </div>
+            <dl class="hero__stats">
+              <div>
+                <dt>3k+</dt>
+                <dd>Successful launches in the last year.</dd>
+              </div>
+              <div>
+                <dt>92%</dt>
+                <dd>Of teams report faster decision making.</dd>
+              </div>
+              <div>
+                <dt>48 hrs</dt>
+                <dd>Average time to spin up a new launch plan.</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="hero__media" aria-hidden="true">
+            <div class="hero__card">
+              <h2>Launch Readiness</h2>
+              <ul>
+                <li>
+                  <span class="dot dot--green"></span>
+                  Final QA checklist complete
+                </li>
+                <li>
+                  <span class="dot dot--blue"></span>
+                  Marketing collateral approved
+                </li>
+                <li>
+                  <span class="dot dot--yellow"></span>
+                  Early access feedback collected
+                </li>
+              </ul>
+              <footer>
+                <p>
+                  <strong>Next step:</strong>
+                  Coordinate launch announcement with marketing
+                </p>
+              </footer>
+            </div>
+            <div class="hero__bubble hero__bubble--one"></div>
+            <div class="hero__bubble hero__bubble--two"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container">
+          <p class="eyebrow">Why NovaLaunch</p>
+          <h2>Everything you need to ship with certainty.</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">📊</div>
+              <h3>Insights Dashboard</h3>
+              <p>
+                Monitor customer feedback, adoption metrics, and release health in
+                real time. Custom dashboards keep every stakeholder aligned.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">🤝</div>
+              <h3>Team Collaboration</h3>
+              <p>
+                Assign owners, manage launch tasks, and keep discussions organized
+                with context-aware notes and approvals.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">🚀</div>
+              <h3>Launch Playbooks</h3>
+              <p>
+                Pre-built templates for every launch scenario accelerate planning
+                and ensure nothing slips through the cracks.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">🔒</div>
+              <h3>Enterprise Security</h3>
+              <p>
+                SOC 2 compliant with granular permissions, SSO, and audit trails so
+                your data stays protected across the organization.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="showcase">
+        <div class="container showcase">
+          <div class="showcase__content">
+            <p class="eyebrow">Workflows</p>
+            <h2>Visualize progress from kickoff to launch day.</h2>
+            <p>
+              Combine Kanban boards with timeline views for a holistic picture of
+              your launch. Sync milestones with Jira, Slack, and 50+ integrations.
+            </p>
+            <ul class="checklist">
+              <li>Drag-and-drop task management</li>
+              <li>Real-time alerts for critical blockers</li>
+              <li>Automatic post-launch retrospectives</li>
+            </ul>
+            <a class="btn" href="#contact">Book a demo</a>
+          </div>
+          <div class="showcase__media" aria-hidden="true">
+            <div class="showcase__screen">
+              <div class="showcase__header">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="showcase__board">
+                <div class="showcase__column">
+                  <h3>Backlog</h3>
+                  <div class="showcase__card">Scope product brief</div>
+                  <div class="showcase__card">Stakeholder interviews</div>
+                </div>
+                <div class="showcase__column">
+                  <h3>In Review</h3>
+                  <div class="showcase__card">Pricing analysis</div>
+                  <div class="showcase__card">Beta feedback roundup</div>
+                </div>
+                <div class="showcase__column">
+                  <h3>Ready</h3>
+                  <div class="showcase__card">Press kit finalize</div>
+                  <div class="showcase__card">Legal approval</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials">
+        <div class="container">
+          <p class="eyebrow">Loved by teams worldwide</p>
+          <h2>See how NovaLaunch transforms product rollouts.</h2>
+          <div class="testimonial-grid">
+            <figure class="testimonial">
+              <blockquote>
+                “NovaLaunch keeps every department aligned, from engineering to PR.
+                Our release cycles are 30% faster.”
+              </blockquote>
+              <figcaption>
+                <strong>Maya Albright</strong>
+                Director of Product, Lumen AI
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “The insights dashboard surfaces exactly what our execs need to see.
+                We make decisions with confidence.”
+              </blockquote>
+              <figcaption>
+                <strong>Daniel Chen</strong>
+                VP Product Operations, Northwind
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “Templates and automations saved us countless hours. Launches feel
+                calm instead of chaotic.”
+              </blockquote>
+              <figcaption>
+                <strong>Nadia Rahman</strong>
+                Product Marketing Lead, Apex Labs
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="metrics">
+        <div class="container metrics">
+          <div>
+            <p class="eyebrow">Built for scale</p>
+            <h2>Secure, reliable, and ready for the enterprise.</h2>
+            <p>
+              NovaLaunch is cloud-native with 99.99% uptime, continuous backups, and
+              compliance certifications to meet the demands of growing teams.
+            </p>
+          </div>
+          <dl class="metrics__list">
+            <div>
+              <dt>99.99%</dt>
+              <dd>Uptime backed by industry-leading SLAs.</dd>
+            </div>
+            <div>
+              <dt>24/7</dt>
+              <dd>Global support with dedicated success managers.</dd>
+            </div>
+            <div>
+              <dt>50+</dt>
+              <dd>Integrations across the tools you already use.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="container">
+          <p class="eyebrow">Flexible plans</p>
+          <h2>Pricing for teams at every stage.</h2>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <p class="plan">Starter</p>
+              <p class="price">$0<span>/mo</span></p>
+              <p class="description">For early-stage teams validating their first launch.</p>
+              <ul>
+                <li>Up to 5 users</li>
+                <li>Launch playbook templates</li>
+                <li>Email support</li>
+              </ul>
+              <a class="btn btn--ghost" href="#contact">Get started</a>
+            </article>
+            <article class="pricing-card pricing-card--highlight">
+              <p class="plan">Growth</p>
+              <p class="price">$49<span>/mo</span></p>
+              <p class="description">Scale launches with collaboration across teams.</p>
+              <ul>
+                <li>Unlimited launch projects</li>
+                <li>Advanced analytics</li>
+                <li>Priority support</li>
+              </ul>
+              <a class="btn" href="#contact">Start free trial</a>
+            </article>
+            <article class="pricing-card">
+              <p class="plan">Enterprise</p>
+              <p class="price">Let's talk</p>
+              <p class="description">Custom solutions, dedicated success, and SSO.</p>
+              <ul>
+                <li>Unlimited users</li>
+                <li>Custom integrations</li>
+                <li>Dedicated CSM</li>
+              </ul>
+              <a class="btn btn--ghost" href="#contact">Contact sales</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="contact">
+        <div class="container contact">
+          <div class="contact__content">
+            <p class="eyebrow">Stay in the loop</p>
+            <h2>Ready to launch smarter?</h2>
+            <p>
+              Join thousands of product leaders who rely on NovaLaunch for every
+              release. Subscribe for launch tips and early access to new features.
+            </p>
+            <form class="newsletter" action="#" method="post">
+              <label class="sr-only" for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              <button type="submit" class="btn">Notify me</button>
+            </form>
+          </div>
+          <div class="contact__aside">
+            <h3>Need a guided tour?</h3>
+            <p>
+              Schedule a 30-minute live walkthrough with our product specialists.
+            </p>
+            <a class="btn btn--ghost" href="mailto:hello@novalaunch.com">Book a call</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> NovaLaunch. All rights reserved.</p>
+        <ul class="site-footer__links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#top">Back to top</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
