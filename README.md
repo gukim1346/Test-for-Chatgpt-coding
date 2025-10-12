@@ -27,7 +27,8 @@ Flask wrapper.
 
 ## Deploying to Google Cloud
 
-The project is ready to deploy to Google App Engine Standard Environment.
+The project is ready to deploy to Google App Engine Standard Environment and
+also includes a container recipe for Cloud Build or Cloud Run workflows.
 
 1. Install and initialize the [Google Cloud CLI](https://cloud.google.com/sdk/docs/install).
 2. Authenticate with your Google Cloud project:
@@ -56,6 +57,23 @@ The project is ready to deploy to Google App Engine Standard Environment.
 
 App Engine uses the provided `app.yaml` configuration, `main.py` Flask
 application, and `requirements.txt` for dependency management.
+
+### Deploying with Cloud Build / Cloud Run
+
+If you prefer to deploy with Cloud Build (for example, to Cloud Run), use the
+included `Dockerfile`:
+
+```bash
+gcloud builds submit --tag gcr.io/<YOUR_PROJECT_ID>/novalaunch
+gcloud run deploy novalaunch \
+  --image gcr.io/<YOUR_PROJECT_ID>/novalaunch \
+  --platform managed \
+  --region <YOUR_REGION>
+```
+
+The Docker image runs the Flask application with Gunicorn bound to port 8080,
+which matches Cloud Run's default expectations and is compatible with other
+container hosting options on Google Cloud.
 
 ## Features
 
