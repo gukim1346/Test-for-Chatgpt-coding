@@ -61,19 +61,33 @@ application, and `requirements.txt` for dependency management.
 ### Deploying with Cloud Build / Cloud Run
 
 If you prefer to deploy with Cloud Build (for example, to Cloud Run), use the
-included `Dockerfile`:
+provided `cloudbuild.yaml`. It explicitly points Cloud Build at the repository
+`Dockerfile`, preventing "unable to evaluate symlinks in Dockerfile path"
+errors when the build context omits the file:
 
 ```bash
-gcloud builds submit --tag gcr.io/<YOUR_PROJECT_ID>/novalaunch
-gcloud run deploy novalaunch \
-  --image gcr.io/<YOUR_PROJECT_ID>/novalaunch \
+IMAGE_NAME=novalaunch
+
+gcloud builds submit \
+  --config cloudbuild.yaml \
+  --substitutions _IMAGE_NAME=$IMAGE_NAME
+```
+
+Then deploy the resulting container image (replace `<YOUR_REGION>` with a
+supported Cloud Run region):
+
+```bash
+gcloud run deploy $IMAGE_NAME \
+  --image gcr.io/$PROJECT_ID/$IMAGE_NAME \
   --platform managed \
   --region <YOUR_REGION>
 ```
 
 The Docker image runs the Flask application with Gunicorn bound to port 8080,
 which matches Cloud Run's default expectations and is compatible with other
-container hosting options on Google Cloud.
+container hosting options on Google Cloud. Feel free to change the `IMAGE_NAME`
+variable (and matching `_IMAGE_NAME` substitution) to any valid image
+identifier; it only controls the tag produced by Cloud Build.
 
 ## Features
 
@@ -88,6 +102,7 @@ container hosting options on Google Cloud.
 
 ```
 ├── app.yaml         # App Engine deployment configuration
+├── cloudbuild.yaml  # Cloud Build recipe for containerizing the app
 ├── index.html       # Main page markup
 ├── main.py          # Flask wrapper used for serving the site
 ├── requirements.txt # Python dependencies for deployment
