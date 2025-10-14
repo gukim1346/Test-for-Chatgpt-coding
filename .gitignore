@@ -1,0 +1,10 @@
+node_modules
+.env
+backend/.env
+frontend/.env
+dist
+backend/dist
+frontend/dist
+backend/tmp
+backend/uploads
+backend/prisma/dev.db
